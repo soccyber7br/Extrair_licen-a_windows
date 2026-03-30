@@ -138,9 +138,9 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma _issue_ ou e
 
 ---
 
-## 📄 Licença
+## 📄 Bugs
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+O codificação de saída precisa ser recodificada. Próximo commit pretendo ajustar.
 
 ---
 
