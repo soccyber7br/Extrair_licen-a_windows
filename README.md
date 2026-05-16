@@ -14,6 +14,8 @@ Ideal para equipes de:
 - Controle de identidade
 - Troubleshooting corporativo
 
+<img width="727" height="640" alt="image" src="https://github.com/user-attachments/assets/f0be15b9-e209-4485-975d-feb3f052f433" />
+
 ---
 
 # 📋 Funcionalidades
