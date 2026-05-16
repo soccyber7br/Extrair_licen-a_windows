@@ -1,66 +1,95 @@
-# 🖥️ INFO SYSTEM - Coleta de Informações do Windows
+# 🦈 INFO SYSTEM 3.3 — Coleta de Informações do Sistema Windows
 
-Script em PowerShell para coleta automatizada de informações de sistema, voltado para inventário, auditoria e controle de conformidade em ambientes corporativos.
+Ferramenta em PowerShell para inventário rápido e coleta automatizada de informações do sistema operacional Windows.
 
-## 📌 Objetivo
+O script gera relatórios detalhados em **TXT** ou **PDF**, contendo informações de hardware, rede, segurança e criptografia da máquina.
 
-Centralizar informações críticas do host em um único output estruturado, facilitando:
+Ideal para equipes de:
 
+- Infraestrutura
+- Service Desk
+- Suporte Técnico
+- Auditoria
 - Inventário de ativos
-- Auditoria de endpoints
-- Validação de conformidade
-- Troubleshooting rápido
+- Controle de identidade
+- Troubleshooting corporativo
 
-## ⚙️ Funcionalidades
+---
 
-O script coleta e registra:
+# 📋 Funcionalidades
 
-- Usuário logado (`whoami`)
-- Hostname
-- Endereços IP (IPv4 válidos)
-- Adaptadores de rede + MAC Address
-- Sistema operacional + modelo da máquina
-- Data de instalação do SO
-- Informações de BIOS (versão + serial)
-- Processador
-- Memória RAM total
-- Discos físicos (tamanho)
-- Status do Windows Defender:
-  - Antivirus
-  - Real-time protection
-  - Tamper protection
-  - Última atualização de assinatura
-- Chave de licença do Windows (quando disponível)
+## ✅ Coleta automática de informações do sistema
 
-## 📂 Output
+O script realiza a coleta dos seguintes dados:
 
-O relatório é salvo automaticamente na área de trabalho.
+### 👤 Usuário logado
+- Usuário atualmente autenticado na máquina
 
-⚠️ Observações
+### 🖥️ Hostname
+- Nome do computador
 
-A chave de licença pode não ser retornada em sistemas com:
-Licença digital (Microsoft Account)
-OEM vinculada ao hardware
-Get-PhysicalDisk pode exigir privilégios elevados dependendo do ambiente
-Get-MpComputerStatus requer Windows Defender ativo
+### 🌐 Endereços IP
+- Lista de IPs IPv4 ativos
 
-🛡️ Uso em Segurança / Blue Team
+### 🔌 Adaptadores de rede
+- Nome dos adaptadores
+- Endereço MAC
 
-Esse script é útil para:
+### 💻 Sistema operacional
+- Nome e versão do Windows
 
-Baseline de máquinas
-Coleta rápida em incident response
-Validação de hardening básico
-Integração manual com planilhas de controle (IAM / Compliance)
+### 🔐 BIOS
+- Serial da BIOS
 
-🧱 Estrutura
+### ⚙️ Processador (CPU)
+- Modelo do processador instalado
 
-Função auxiliar para escrita (Write-Section)
-Execução sequencial por etapas [1/11]
-Output padronizado em TXT
-Interface CLI simples com feedback visual
+### 🧠 Memória RAM
+- Quantidade total de RAM instalada
 
-✍️ Autor
+### 💾 Discos físicos
+- Tamanho dos discos em GB
 
-Analista Renata Scheiner
-Controle de Identidade e Conformidade
+### 🛡️ Windows Defender
+- Status do antivírus
+- Status da proteção em tempo real
+
+### 🔑 Licença do Windows
+- Chave de ativação do sistema operacional
+
+### 🔒 BitLocker
+- Recovery Keys do BitLocker
+- Identificadores das chaves
+- Unidades criptografadas
+
+---
+
+# 📄 Exportação de Relatórios
+
+O usuário pode escolher entre:
+
+## 1️⃣ TXT
+Relatório simples em texto.
+
+## 2️⃣ PDF
+Conversão automática utilizando:
+- `Microsoft Print to PDF`
+
+---
+
+# 🖥️ Interface Console
+
+O script possui:
+- Interface amigável em terminal
+- Barra sequencial de progresso
+- Feedback visual de execução
+- Mensagens de status em tempo real
+
+---
+
+# 📂 Local de saída
+
+Os relatórios são salvos automaticamente na:
+
+```powershell
+Desktop do usuário atual
